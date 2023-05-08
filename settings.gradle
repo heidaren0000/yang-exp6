@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "yang-exp6"
+rootProject.name = "demo06"
 include ':app'

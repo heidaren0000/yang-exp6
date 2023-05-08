@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.yang_exp6'
+    namespace 'org.ykq.demo06'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.yang_exp6"
+        applicationId "org.ykq.demo06"
         minSdk 22
         targetSdk 33
         versionCode 1
