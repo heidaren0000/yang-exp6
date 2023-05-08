@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">杨凯奇实验6</string>
+    <string name="app_name">杨凯淇实验6</string>
     <string name="hint_file_or_key_name">文件名或者值名</string>
     <string name="hint_textcontent">要存储的文本信息</string>
     <string name="store2preferences">存储到Preference</string>

@@ -5,9 +5,11 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences spDefault = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor speDefault = spDefault.edit();
 
+        mEditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                filename = ((EditText)view).getText().toString();
+            }
+        });
+
         mButton2Preference.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,24 +110,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         // read all preferences and content of target file name and prints into toast
         mButton2Read.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                filename = mEditText.getText().toString();
                 String dataFromSP = getString(R.string.template_read_pref).toString() + spDefault.getAll().toString() + "\n";
                 String dataFromFile = getString(R.string.template_read_file).toString() + readFromTargetFile(filename) + "\n";
                 String toaster = dataFromSP + dataFromFile;
                 Toast.makeText(getApplicationContext(), toaster, Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
     private String readFromTargetFile(String filename) {
         FileInputStream fin = null;
         try {
             File file = new File(getExternalFilesDir(null), filename);
+            if(!file.exists()) {
+                return "File not exists!";
+            }
             fin = new FileInputStream(file);
             InputStreamReader inr = new InputStreamReader(fin, StandardCharsets.UTF_8);
             BufferedReader inrb = new BufferedReader(inr);
@@ -130,7 +141,8 @@ public class MainActivity extends AppCompatActivity {
             inrb.close();
             return result.toString();
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+//            throw new RuntimeException(e);
+            return "File not exist.";
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

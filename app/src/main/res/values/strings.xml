@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">yang-exp6</string>
+    <string name="app_name">yangkaiqi-exp6</string>
     <string name="hint_file_or_key_name">Filename or Keyname</string>
     <string name="hint_textcontent">Text Content To Store</string>
     <string name="store2preferences">To Preference</string>
