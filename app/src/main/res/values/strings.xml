@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">yang-exp6</string>
+    <string name="hint_file_or_key_name">Filename or Keyname</string>
+    <string name="hint_textcontent">Text Content To Store</string>
+    <string name="store2preferences">To Preference</string>
+    <string name="store2file">To File</string>
+    <string name="read_data">Read</string>
+    <string name="template_read_pref">Data from Pref: </string>
+    <string name="template_read_file">Data from target filename: </string>
+</resources>

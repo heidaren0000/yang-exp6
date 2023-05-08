@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="file_or_key_name">Filename or Keyname</string>
+    <string name="textcontent">Text Content To Store</string>
+    <string name="store2preferences">To Preference</string>
+</resources>
